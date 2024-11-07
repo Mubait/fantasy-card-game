@@ -9,7 +9,8 @@ export default {
       backgroundImage: {
         'fog': "url('test.jpg')",
         'bgIntro': "url('/1.introPg/intro.jpg')",
-        'bgAuth': "url('/2.regPg/regPg.jpg')"
+        'bgAuth': "url('/2.regPg/regPg.jpg')",
+        'bgEn': "url('/language/en.png')",
       },
       fontFamily: {
 				stalinist: ["Stalinist One"],

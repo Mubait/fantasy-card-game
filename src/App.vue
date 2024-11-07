@@ -1,15 +1,17 @@
 <script setup>
-import ButtonPlay1 from "./components/ButtonPlay1.vue"
+import BaseButtonStyle from "./components/BaseButtonStyle.vue"
 import Intro from "./pages/Intro.vue";
 import Auth from "./pages/Auth.vue"
 
 import { ref, watch, provide, computed, onMounted } from 'vue'
 
 import {Howl} from 'howler'
+import { useI18n } from 'vue-i18n'
 
-
+const { locale } = useI18n() 
 
 let soundImgUrl = ref("audio-on.png")
+let langImgUrl = ref("/language/ru.png")
 
 const sound = new Howl({
   src: ['/audio/2.mp3'],
@@ -29,6 +31,10 @@ let soundAction = async () => {
   }
 }
 
+let changeLang = async () => {
+  locale.value == 'ru'? (locale.value = 'en', langImgUrl = '/language/en.png') : (locale.value = 'ru', langImgUrl = '/language/ru.png')
+}
+
 
 
 onMounted(() => {
@@ -38,7 +44,26 @@ onMounted(() => {
 <template>
   <RouterView />
 
-  <img @click="soundAction" class="absolute w-10 h-12 right-0 bottom-0 mb-1 mr-2 cursor-pointer" :src="soundImgUrl" alt="audio"/>
+  <h1>{{ $t('title') }}</h1>
+
+  <div class="absolute right-0 bottom-0 flex space-x-4 mr-4">
+    <img @click="soundAction" class="relative w-10 h-12 my-2 cursor-pointer" :src="soundImgUrl" alt="audio"/>
+    <img @click="changeLang" class="relative w-10 h-10 cursor-pointer my-2" :src="langImgUrl" alt="ruIcon"/>
+  </div>
+
+
+  <!-- <button @click="$i18n.locale == 'ru'? $i18n.locale = 'en' : $i18n.locale = 'ru'" class="border-4" >change lang</button> -->
+
+  <!-- <select v-model="$i18n.locale">
+    <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+  </select> -->
+
+  <!-- <BaseButtonStyle
+  :btn-size="'w-48 h-20'"
+  :btn-color="'bg-gradient-to-r from-emerald-800 via-emerald-500 to-emerald-800'"
+  :btn-color-hover="'bg-gradient-to-r hover:from-emerald-600 hover:via-emerald-300 hover:to-emerald-600'"
+  /> -->
+
 </template>
 
 

@@ -1,7 +1,5 @@
 <script setup>
 import AuthWindow from '@/components/AuthWindow.vue';
-
-
 </script>
 
 <template>
