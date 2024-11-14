@@ -5,7 +5,7 @@ import { useI18n } from 'vue-i18n'
 const emailInput = defineModel('emailInput')
 const passwordInput = defineModel('passwordInput')
 
-let fetchSignup = () => {
+let usersSignin = () => {
   let userData = {
     email: emailInput.value,
     password: passwordInput.value
@@ -36,7 +36,7 @@ const usersSignup = () => {
         <p class="text-sm w-max ml-auto text-sky-400 my-2 font-sans cursor-pointer">{{ $t('authPage.newPassword') }}</p>
         
         <div class="flex justify-between">
-          <p @click="fetchSignin"
+          <p @click="usersSignin"
           class="text-gray-50 w-max text-xl font-sans cursor-pointer active:text-sky-500">{{ $t('authPage.signIn') }}</p>
           <p @click="usersSignup" 
           class="text-gray-50 w-max text-xl font-sans cursor-pointer active:text-sky-500">{{ $t('authPage.signUp') }}</p>

@@ -10,6 +10,7 @@ export default {
         'fog': "url('test.jpg')",
         'bgIntro': "url('/1.introPg/intro.jpg')",
         'bgAuth': "url('/2.regPg/regPg.jpg')",
+        'bgRegNick': "url('/3.regNicknamePg/regPgNickname.jpg')",
         'bgEn': "url('/language/en.png')",
       },
       fontFamily: {

@@ -2,17 +2,18 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createWebHistory, createRouter } from 'vue-router'
-
 import App from './App.vue'
+
 import Intro from './pages/Intro.vue'
 import Auth from './pages/Auth.vue'
+import RegNick from './pages/RegNick.vue'
 
-import { createI18n } from 'vue-i18n'
 import i18n  from "./i18n.js"
 
 const routes = [
   { path: '/',   component: Intro },
   { path: '/auth',   component: Auth },
+  { path: '/regnick',   component: RegNick },
 ]
 
 const router = createRouter({

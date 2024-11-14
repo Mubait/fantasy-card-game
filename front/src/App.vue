@@ -36,7 +36,7 @@ let soundAction = async () => {
 }
 
 let changeLang = async () => {
-  locale.value == 'ru'? (locale.value = 'en', langImgUrl = '/language/en.png') : (locale.value = 'ru', langImgUrl = '/language/ru.png')
+  locale.value == 'ru'? (locale.value = 'en', langImgUrl.value = '/language/en.png') : (locale.value = 'ru', langImgUrl.value = '/language/ru.png')
 }
 
 
@@ -48,7 +48,7 @@ onMounted(() => {
 <template>
   <RouterView />
 
-  <div class="absolute right-0 bottom-0 flex space-x-4 mr-4">
+  <div class="absolute right-0 bottom-0 flex space-x-4 mr-4 items-center">
     <img @click="soundAction" class="relative w-10 h-12 my-2 cursor-pointer" :src="soundImgUrl" alt="audio"/>
     <img @click="changeLang" class="relative w-10 h-10 cursor-pointer my-2" :src="langImgUrl" alt="ruIcon"/>
   </div>

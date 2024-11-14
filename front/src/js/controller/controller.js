@@ -1,5 +1,4 @@
 import { users } from "./routes/users";
-import { urlserver } from "../conf";
 
 
 const controller = {

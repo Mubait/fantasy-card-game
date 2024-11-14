@@ -6,8 +6,6 @@ let parallax = () => { document.onmousemove = (e) => {
     let y = e.clientY / window.innerHeight
 
     layer.style.transform = `translate(-${x*70}px, -${y*70}px)`
-
-    console.log(x,y)
 	});
 }
 
@@ -34,8 +32,8 @@ let parallax = () => { document.onmousemove = (e) => {
       </div>
     </div>
 
-    <img class="absolute -right-20 -bottom-20 h-full layer pointer-events-none" src="werewolf.png"/>
-    <img class="absolute -left-20 -bottom-20 h-full layer pointer-events-none" src="human.png"/>
+    <img class="absolute -right-20 -bottom-20 h-full layer pointer-events-none" src="1.introPg/werewolf.png"/>
+    <img class="absolute -left-20 -bottom-20 h-full layer pointer-events-none" src="1.introPg/human.png"/>
   </div>
 
 </template>
