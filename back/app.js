@@ -1,13 +1,7 @@
 const express = require('express')
 const cors = require('cors')
-
-const maindb = require('./database/maindb')
-
 const usersRoutes = require('./сontroller/routes/usersRoutes')
-// maindb.getUsers()
-// maindb.getDeps()
-
-
+require('dotenv').config()
 
 const app = express()
 const port = 3000

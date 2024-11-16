@@ -1,9 +1,8 @@
 const Sequelize = require("sequelize");
-const conf = require('./config')
 
 const sequelize = new Sequelize("fantasycardgame", "root", "3572", {
-  dialect: conf.dialect,
-  host: conf.host,
+  dialect: 'mysql',
+  host: process.env.host,
   define: {
       timestamps: false
   }

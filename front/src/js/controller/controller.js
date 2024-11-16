@@ -3,7 +3,7 @@ import { users } from "./routes/users";
 
 const controller = {
   signup:(userData) => {
-    users.fetchGetUsers()
+    users.axiosPostUsersSignup(userData)
     .then(function (response) {
       console.log(response.data);
     })
